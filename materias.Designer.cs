@@ -51,14 +51,14 @@
             this.lblCodigoMateria = new System.Windows.Forms.Label();
             this.erpMaterias = new System.Windows.Forms.ErrorProvider(this.components);
             this.grdDatosMaterias = new System.Windows.Forms.DataGridView();
-            this.idMateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new Tareaaaaaaaaa222.Database1DataSet();
             this.materiasTableAdapter = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.materiasTableAdapter();
             this.tableAdapterManager = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager();
+            this.idMateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbEdicionMateria.SuspendLayout();
             this.grbNavegacionMateria.SuspendLayout();
             this.grbDatosMateria.SuspendLayout();
@@ -73,11 +73,8 @@
             this.cboOpcionBuscarMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboOpcionBuscarMaterias.FormattingEnabled = true;
             this.cboOpcionBuscarMaterias.Items.AddRange(new object[] {
-            "Marca",
-            "Modelo",
-            "Year",
-            "Numero Motor",
-            "Numero Chasis"});
+            "Codigo",
+            "Materia"});
             this.cboOpcionBuscarMaterias.Location = new System.Drawing.Point(614, 12);
             this.cboOpcionBuscarMaterias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cboOpcionBuscarMaterias.Name = "cboOpcionBuscarMaterias";
@@ -89,6 +86,7 @@
             this.txtBuscarMaterias.Location = new System.Drawing.Point(762, 12);
             this.txtBuscarMaterias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtBuscarMaterias.Name = "txtBuscarMaterias";
+            this.txtBuscarMaterias.ReadOnly = true;
             this.txtBuscarMaterias.Size = new System.Drawing.Size(199, 20);
             this.txtBuscarMaterias.TabIndex = 14;
             this.txtBuscarMaterias.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMaterias_KeyUp);
@@ -317,49 +315,24 @@
             // 
             // grdDatosMaterias
             // 
+            this.grdDatosMaterias.AllowUserToAddRows = false;
+            this.grdDatosMaterias.AllowUserToDeleteRows = false;
             this.grdDatosMaterias.AutoGenerateColumns = false;
             this.grdDatosMaterias.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.grdDatosMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDatosMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idMateriaDataGridViewTextBoxColumn,
-            this.codigoDataGridViewTextBoxColumn,
-            this.materiaDataGridViewTextBoxColumn,
-            this.uvDataGridViewTextBoxColumn});
+            this.codigo,
+            this.materia,
+            this.uv});
             this.grdDatosMaterias.DataSource = this.materiasBindingSource;
             this.grdDatosMaterias.Location = new System.Drawing.Point(544, 38);
             this.grdDatosMaterias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.grdDatosMaterias.Name = "grdDatosMaterias";
+            this.grdDatosMaterias.ReadOnly = true;
             this.grdDatosMaterias.Size = new System.Drawing.Size(514, 259);
             this.grdDatosMaterias.TabIndex = 16;
             this.grdDatosMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDatosMaterias_CellContentClick);
-            // 
-            // idMateriaDataGridViewTextBoxColumn
-            // 
-            this.idMateriaDataGridViewTextBoxColumn.DataPropertyName = "idMateria";
-            this.idMateriaDataGridViewTextBoxColumn.HeaderText = "idMateria";
-            this.idMateriaDataGridViewTextBoxColumn.Name = "idMateriaDataGridViewTextBoxColumn";
-            this.idMateriaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "codigo";
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // materiaDataGridViewTextBoxColumn
-            // 
-            this.materiaDataGridViewTextBoxColumn.DataPropertyName = "materia";
-            this.materiaDataGridViewTextBoxColumn.HeaderText = "materia";
-            this.materiaDataGridViewTextBoxColumn.Name = "materiaDataGridViewTextBoxColumn";
-            this.materiaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // uvDataGridViewTextBoxColumn
-            // 
-            this.uvDataGridViewTextBoxColumn.DataPropertyName = "uv";
-            this.uvDataGridViewTextBoxColumn.HeaderText = "uv";
-            this.uvDataGridViewTextBoxColumn.Name = "uvDataGridViewTextBoxColumn";
-            this.uvDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // materiasBindingSource
             // 
@@ -381,6 +354,35 @@
             this.tableAdapterManager.materiasTableAdapter = this.materiasTableAdapter;
             this.tableAdapterManager.UpdateOrder = Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.vehiculosTableAdapter = null;
+            // 
+            // idMateriaDataGridViewTextBoxColumn
+            // 
+            this.idMateriaDataGridViewTextBoxColumn.DataPropertyName = "idMateria";
+            this.idMateriaDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idMateriaDataGridViewTextBoxColumn.Name = "idMateriaDataGridViewTextBoxColumn";
+            this.idMateriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idMateriaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // materia
+            // 
+            this.materia.DataPropertyName = "materia";
+            this.materia.HeaderText = "materia";
+            this.materia.Name = "materia";
+            this.materia.ReadOnly = true;
+            // 
+            // uv
+            // 
+            this.uv.DataPropertyName = "uv";
+            this.uv.HeaderText = "uv";
+            this.uv.Name = "uv";
+            this.uv.ReadOnly = true;
             // 
             // materias
             // 
@@ -444,8 +446,8 @@
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView grdDatosMaterias;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMateriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn materiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uvDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uv;
     }
 }

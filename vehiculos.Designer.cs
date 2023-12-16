@@ -76,7 +76,6 @@
             // grdGestionCarro
             // 
             this.grdGestionCarro.AllowUserToAddRows = false;
-            this.grdGestionCarro.AllowUserToDeleteRows = false;
             this.grdGestionCarro.AutoGenerateColumns = false;
             this.grdGestionCarro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdGestionCarro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -87,10 +86,9 @@
             this.num_motor,
             this.num_chasis});
             this.grdGestionCarro.DataSource = this.vehiculosBindingSource;
-            this.grdGestionCarro.Location = new System.Drawing.Point(305, 87);
+            this.grdGestionCarro.Location = new System.Drawing.Point(314, 87);
             this.grdGestionCarro.Name = "grdGestionCarro";
-            this.grdGestionCarro.ReadOnly = true;
-            this.grdGestionCarro.Size = new System.Drawing.Size(626, 220);
+            this.grdGestionCarro.Size = new System.Drawing.Size(558, 220);
             this.grdGestionCarro.TabIndex = 49;
             // 
             // idVehiculo
@@ -106,35 +104,30 @@
             this.marca.DataPropertyName = "marca";
             this.marca.HeaderText = "Marca";
             this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
             // 
             // modelo
             // 
             this.modelo.DataPropertyName = "modelo";
             this.modelo.HeaderText = "Modelo";
             this.modelo.Name = "modelo";
-            this.modelo.ReadOnly = true;
             // 
             // year
             // 
             this.year.DataPropertyName = "year";
             this.year.HeaderText = "Año";
             this.year.Name = "year";
-            this.year.ReadOnly = true;
             // 
             // num_motor
             // 
             this.num_motor.DataPropertyName = "num_motor";
-            this.num_motor.HeaderText = "Numero motor";
+            this.num_motor.HeaderText = "Num_motor";
             this.num_motor.Name = "num_motor";
-            this.num_motor.ReadOnly = true;
             // 
             // num_chasis
             // 
             this.num_chasis.DataPropertyName = "num_chasis";
-            this.num_chasis.HeaderText = "Numero Chasis";
+            this.num_chasis.HeaderText = "Num_chasis";
             this.num_chasis.Name = "num_chasis";
-            this.num_chasis.ReadOnly = true;
             // 
             // vehiculosBindingSource
             // 
@@ -151,9 +144,10 @@
             this.txtBuscarCarro.Location = new System.Drawing.Point(501, 61);
             this.txtBuscarCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtBuscarCarro.Name = "txtBuscarCarro";
+            this.txtBuscarCarro.ReadOnly = true;
             this.txtBuscarCarro.Size = new System.Drawing.Size(173, 20);
             this.txtBuscarCarro.TabIndex = 50;
-            this.txtBuscarCarro.TextChanged += new System.EventHandler(this.txtBuscarCarro_TextChanged);
+            this.txtBuscarCarro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarCarro_KeyUp);
             // 
             // lblBuscarCarro
             // 
@@ -190,7 +184,7 @@
             this.grbEdicionCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grbEdicionCarro.Name = "grbEdicionCarro";
             this.grbEdicionCarro.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.grbEdicionCarro.Size = new System.Drawing.Size(251, 91);
+            this.grbEdicionCarro.Size = new System.Drawing.Size(267, 91);
             this.grbEdicionCarro.TabIndex = 46;
             this.grbEdicionCarro.TabStop = false;
             this.grbEdicionCarro.Text = "Edicion";
@@ -199,7 +193,7 @@
             // 
             this.btnEliminarCarro.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarCarro.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarCarro.Location = new System.Drawing.Point(163, 39);
+            this.btnEliminarCarro.Location = new System.Drawing.Point(174, 39);
             this.btnEliminarCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminarCarro.Name = "btnEliminarCarro";
             this.btnEliminarCarro.Size = new System.Drawing.Size(72, 31);
@@ -211,7 +205,7 @@
             // btnModificarCarro
             // 
             this.btnModificarCarro.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCarro.Location = new System.Drawing.Point(79, 39);
+            this.btnModificarCarro.Location = new System.Drawing.Point(90, 39);
             this.btnModificarCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificarCarro.Name = "btnModificarCarro";
             this.btnModificarCarro.Size = new System.Drawing.Size(80, 31);
@@ -226,7 +220,7 @@
             this.btnNuevoCarro.Location = new System.Drawing.Point(5, 39);
             this.btnNuevoCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnNuevoCarro.Name = "btnNuevoCarro";
-            this.btnNuevoCarro.Size = new System.Drawing.Size(61, 31);
+            this.btnNuevoCarro.Size = new System.Drawing.Size(68, 31);
             this.btnNuevoCarro.TabIndex = 7;
             this.btnNuevoCarro.Text = "Nuevo";
             this.btnNuevoCarro.UseVisualStyleBackColor = true;
@@ -239,7 +233,7 @@
             this.grbNavegacionCarro.Controls.Add(this.btnUltimoCarro);
             this.grbNavegacionCarro.Controls.Add(this.btnAnteriorCarro);
             this.grbNavegacionCarro.Controls.Add(this.btnPrimeroCarro);
-            this.grbNavegacionCarro.Location = new System.Drawing.Point(321, 309);
+            this.grbNavegacionCarro.Location = new System.Drawing.Point(334, 309);
             this.grbNavegacionCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grbNavegacionCarro.Name = "grbNavegacionCarro";
             this.grbNavegacionCarro.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -490,12 +484,12 @@
         private System.Windows.Forms.BindingSource vehiculosBindingSource;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private Database1DataSetTableAdapters.vehiculosTableAdapter vehiculosTableAdapter;
+        private System.Windows.Forms.ErrorProvider erpCarro;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn year;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_motor;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_chasis;
-        private System.Windows.Forms.ErrorProvider erpCarro;
     }
 }

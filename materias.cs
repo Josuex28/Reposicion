@@ -25,13 +25,13 @@
             {
                 InitializeComponent();
             }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            actualizarDsMaterias();
+            cboOpcionBuscarMaterias.SelectedIndex = 1;
+        }
 
-            private void Form1_Load(object sender, EventArgs e)
-            {
-                actualizarDsMaterias();
-                cboOpcionBuscarMaterias.SelectedIndex = 0;
-            }
-            private void actualizarDsMaterias()
+        private void actualizarDsMaterias()
             {
                 miDs.Clear();
                 miDs = objConexion.obtenerDatos();
@@ -125,7 +125,7 @@
                     accion = "nuevo";
                 }
                 else
-                {//Gu
+                {
                     String[] materias = new string[] {
                     accion,txtCodigoMateria.Text, txtNombreMateria.Text, txtUvMateria.Text,
                     miTabla.Rows[posicion].ItemArray[0].ToString()
@@ -214,13 +214,7 @@
                 }
             }
 
-        private void materiasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.materiasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.database1DataSet);
-
-        }
+        
 
         private void materias_Load(object sender, EventArgs e)
         {

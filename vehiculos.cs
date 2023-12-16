@@ -23,11 +23,7 @@ namespace Tareaaaaaaaaa222
         public int posicion = 0;
         String accion = "nuevo";
 
-            private void vehiculos_Load(object sender, EventArgs e)
-            {
-                actualizarDsCarro();
-                cboOpcionBuscarCarro.SelectedIndex = 0;
-            }
+            
             private void actualizarDsCarro()
             {
                 miDs.Clear();
@@ -42,19 +38,21 @@ namespace Tareaaaaaaaaa222
 
             grdGestionCarro.DataSource = miTabla.DefaultView;
             }
-            private void filtrarCarro(String valor, int opcion)
+        private void filtrarCarro(String valor, int opcion)
+        {
+            try
             {
-                try
-                {
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = grdGestionCarro.DataSource;
-                    bs.Filter = opcion == 0 ? "codigo=" + valor : "materia like '%" + valor + "%'";
+                BindingSource bs = new BindingSource();
+                bs.DataSource = grdGestionCarro.DataSource;
+                bs.Filter = opcion == 0 ? "codigo=" + valor : "materia like '%" + valor + "%'";
                 grdGestionCarro.DataSource = bs;
+               
                 erpCarro.SetError(txtBuscarCarro, "");
+              
                 }
                 catch (Exception e)
                 {
-                erpCarro.SetError(txtBuscarCarro, "Por favor ingrese un codigo o materia a buscr");
+                erpCarro.SetError(txtBuscarCarro, "Por favor ingrese un parametro a buscar");
                 }
             }
             private void mostrarDatosCarro()
@@ -63,7 +61,9 @@ namespace Tareaaaaaaaaa222
                 {
                 txtCodigoCarro.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
                 txtNombreCarro.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
-                
+                txtDireccionCarro.Text = miTabla.Rows[posicion].ItemArray[3].ToString();
+                txtTelefonoCarro.Text = miTabla.Rows[posicion].ItemArray[4].ToString();
+                txtNumeroCarro.Text = miTabla.Rows[posicion].ItemArray[5].ToString();
 
                 lblRegistroCarro.Text = (posicion + 1) + " de " + miTabla.Rows.Count;
                 }
@@ -103,7 +103,7 @@ namespace Tareaaaaaaaaa222
                 {
                     MessageBox.Show("Primer regisro", "Registro de Carro");
                 }
-            }
+        }
 
             private void btnPrimerCarro_Click_1(object sender, EventArgs e)
             {
@@ -122,12 +122,12 @@ namespace Tareaaaaaaaaa222
                     accion = "nuevo";
                 }
                 else
-                {//Gu
+                {
                     String[] vehiculos = new string[] {
-                    accion,txtCodigoCarro.Text, txtNombreCarro.Text, 
+                    accion,txtCodigoCarro.Text, txtNombreCarro.Text, txtDireccionCarro.Text, txtTelefonoCarro.Text,txtNumeroCarro.Text, 
                     miTabla.Rows[posicion].ItemArray[0].ToString()
                 };
-                    String msg = objConexion.mantenimientoMaterias(vehiculos);
+                    String msg = objConexion.mantenimientoCarro(vehiculos);
                     if (msg != "1")
                     {
                         MessageBox.Show("Error en el registro de Carro: " + msg, "Registro de Carro.", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -196,7 +196,7 @@ namespace Tareaaaaaaaaa222
 
         private void btnEliminarCarro_Click(object sender, EventArgs e)
         {
-                if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreCarro.Text, "Eliminado Carro",
+                if (MessageBox.Show("Esta seguro de eliminar a " + txtCodigoCarro.Text, "Eliminado Carro",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     String[] vehiculos = new string[] {
@@ -215,11 +215,11 @@ namespace Tareaaaaaaaaa222
                     }
                 }
         
-            }
+        }
 
+            
 
-
-            private void vehiculo_Load(object sender, EventArgs e)
+            private void vehiculos_Load(object sender, EventArgs e)
             {
                 actualizarDsCarro();
                 cboOpcionBuscarCarro.SelectedIndex = 1;
@@ -227,15 +227,17 @@ namespace Tareaaaaaaaaa222
             }
 
         private void txtBuscarCarro_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrarCarro(txtBuscarCarro.Text, cboOpcionBuscarCarro.SelectedIndex);
+            if (e.KeyCode == Keys.Enter)
             {
-                filtrarCarro(txtBuscarCarro.Text, cboOpcionBuscarCarro.SelectedIndex);
-                if (e.KeyCode == Keys.Enter)
-                {
-                    seleccionarCarro();
-                    e.SuppressKeyPress = true;
-                }
+                seleccionarCarro();
+                e.SuppressKeyPress = true;
             }
+        }
 
+        
     }
 
 
+}

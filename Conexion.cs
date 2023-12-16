@@ -57,7 +57,8 @@ namespace Tareaaaaaaaaa222
             String sql = "";
             if (vehiculos[0] == "nuevo")
             {
-                sql = "INSERT INTO vehiculos (marca, modelo, year, num_motor, num_chasis) VALUES('" + vehiculos[1] + "', '" + vehiculos[2] + "', '" + vehiculos[3] + "', '" + vehiculos[4] + "', '" + vehiculos[5] + "')";
+                sql = "INSERT INTO vehiculos (marca, modelo, year, num_motor, num_chasis) VALUES('" + vehiculos[1] + "', '" + vehiculos[2] + "', '" + vehiculos[3] + 
+                    "', '" + vehiculos[4] + "', '" + vehiculos[5] + "')";
             }
             else if (vehiculos[0] == "modificar")
             {
@@ -67,7 +68,7 @@ namespace Tareaaaaaaaaa222
             else if (vehiculos[0] == "eliminar")
             {
                 sql = "DELETE FROM vehiculos WHERE idVehiculo='" + vehiculos[6] + "'";
-            }
+            } 
             return ejecutarSql(sql);
         }
         private string ejecutarSql(String sql)
