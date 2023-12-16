@@ -123,11 +123,11 @@ namespace Tareaaaaaaaaa222
                 }
                 else
                 {//Gu
-                    String[] materias = new string[] {
+                    String[] vehiculos = new string[] {
                     accion,txtCodigoCarro.Text, txtNombreCarro.Text, 
                     miTabla.Rows[posicion].ItemArray[0].ToString()
                 };
-                    String msg = objConexion.mantenimientoMaterias(materias);
+                    String msg = objConexion.mantenimientoMaterias(vehiculos);
                     if (msg != "1")
                     {
                         MessageBox.Show("Error en el registro de Carro: " + msg, "Registro de Carro.", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -241,6 +241,10 @@ namespace Tareaaaaaaaaa222
                 }
             }
 
+        private void txtBuscarCarro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

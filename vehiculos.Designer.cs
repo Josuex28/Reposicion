@@ -153,6 +153,7 @@
             this.txtBuscarCarro.Name = "txtBuscarCarro";
             this.txtBuscarCarro.Size = new System.Drawing.Size(173, 20);
             this.txtBuscarCarro.TabIndex = 50;
+            this.txtBuscarCarro.TextChanged += new System.EventHandler(this.txtBuscarCarro_TextChanged);
             // 
             // lblBuscarCarro
             // 
