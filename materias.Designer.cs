@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cboOpcionBuscarMaterias = new System.Windows.Forms.ComboBox();
-            this.txtBuscarMaterias = new System.Windows.Forms.TextBox();
             this.lblBuscarMaterias = new System.Windows.Forms.Label();
             this.grbEdicionMateria = new System.Windows.Forms.GroupBox();
             this.btnEliminarMateria = new System.Windows.Forms.Button();
@@ -51,14 +49,16 @@
             this.lblCodigoMateria = new System.Windows.Forms.Label();
             this.erpMaterias = new System.Windows.Forms.ErrorProvider(this.components);
             this.grdDatosMaterias = new System.Windows.Forms.DataGridView();
-            this.materiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet = new Tareaaaaaaaaa222.Database1DataSet();
-            this.materiasTableAdapter = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.materiasTableAdapter();
-            this.tableAdapterManager = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager();
             this.idMateriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new Tareaaaaaaaaa222.Database1DataSet();
+            this.materiasTableAdapter = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.materiasTableAdapter();
+            this.tableAdapterManager = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager();
+            this.cboOpcionBuscarMaterias = new System.Windows.Forms.ComboBox();
+            this.txtBuscarMaterias = new System.Windows.Forms.TextBox();
             this.grbEdicionMateria.SuspendLayout();
             this.grbNavegacionMateria.SuspendLayout();
             this.grbDatosMateria.SuspendLayout();
@@ -67,29 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.materiasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cboOpcionBuscarMaterias
-            // 
-            this.cboOpcionBuscarMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboOpcionBuscarMaterias.FormattingEnabled = true;
-            this.cboOpcionBuscarMaterias.Items.AddRange(new object[] {
-            "Codigo",
-            "Materia"});
-            this.cboOpcionBuscarMaterias.Location = new System.Drawing.Point(614, 12);
-            this.cboOpcionBuscarMaterias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cboOpcionBuscarMaterias.Name = "cboOpcionBuscarMaterias";
-            this.cboOpcionBuscarMaterias.Size = new System.Drawing.Size(147, 21);
-            this.cboOpcionBuscarMaterias.TabIndex = 15;
-            // 
-            // txtBuscarMaterias
-            // 
-            this.txtBuscarMaterias.Location = new System.Drawing.Point(762, 12);
-            this.txtBuscarMaterias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtBuscarMaterias.Name = "txtBuscarMaterias";
-            this.txtBuscarMaterias.ReadOnly = true;
-            this.txtBuscarMaterias.Size = new System.Drawing.Size(199, 20);
-            this.txtBuscarMaterias.TabIndex = 14;
-            this.txtBuscarMaterias.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMaterias_KeyUp);
             // 
             // lblBuscarMaterias
             // 
@@ -334,27 +311,6 @@
             this.grdDatosMaterias.TabIndex = 16;
             this.grdDatosMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDatosMaterias_CellContentClick);
             // 
-            // materiasBindingSource
-            // 
-            this.materiasBindingSource.DataMember = "materias";
-            this.materiasBindingSource.DataSource = this.database1DataSet;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // materiasTableAdapter
-            // 
-            this.materiasTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.materiasTableAdapter = this.materiasTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.vehiculosTableAdapter = null;
-            // 
             // idMateriaDataGridViewTextBoxColumn
             // 
             this.idMateriaDataGridViewTextBoxColumn.DataPropertyName = "idMateria";
@@ -384,15 +340,58 @@
             this.uv.Name = "uv";
             this.uv.ReadOnly = true;
             // 
+            // materiasBindingSource
+            // 
+            this.materiasBindingSource.DataMember = "materias";
+            this.materiasBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // materiasTableAdapter
+            // 
+            this.materiasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.materiasTableAdapter = this.materiasTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.vehiculosTableAdapter = null;
+            // 
+            // cboOpcionBuscarMaterias
+            // 
+            this.cboOpcionBuscarMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboOpcionBuscarMaterias.FormattingEnabled = true;
+            this.cboOpcionBuscarMaterias.Items.AddRange(new object[] {
+            "Codigo",
+            "Materia"});
+            this.cboOpcionBuscarMaterias.Location = new System.Drawing.Point(612, 11);
+            this.cboOpcionBuscarMaterias.Name = "cboOpcionBuscarMaterias";
+            this.cboOpcionBuscarMaterias.Size = new System.Drawing.Size(121, 21);
+            this.cboOpcionBuscarMaterias.TabIndex = 18;
+            this.cboOpcionBuscarMaterias.SelectedIndexChanged += new System.EventHandler(this.cboOpcionBuscarMaterias_SelectedIndexChanged);
+            // 
+            // txtBuscarMaterias
+            // 
+            this.txtBuscarMaterias.Location = new System.Drawing.Point(739, 11);
+            this.txtBuscarMaterias.Name = "txtBuscarMaterias";
+            this.txtBuscarMaterias.Size = new System.Drawing.Size(205, 20);
+            this.txtBuscarMaterias.TabIndex = 17;
+            this.txtBuscarMaterias.TextChanged += new System.EventHandler(this.txtBuscarMaterias_TextChanged);
+            this.txtBuscarMaterias.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBuscarMaterias_KeyUp);
+            // 
             // materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(1161, 417);
-            this.Controls.Add(this.grdDatosMaterias);
             this.Controls.Add(this.cboOpcionBuscarMaterias);
             this.Controls.Add(this.txtBuscarMaterias);
+            this.Controls.Add(this.grdDatosMaterias);
             this.Controls.Add(this.lblBuscarMaterias);
             this.Controls.Add(this.grbEdicionMateria);
             this.Controls.Add(this.grbNavegacionMateria);
@@ -418,9 +417,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cboOpcionBuscarMaterias;
-        private System.Windows.Forms.TextBox txtBuscarMaterias;
         private System.Windows.Forms.Label lblBuscarMaterias;
         private System.Windows.Forms.GroupBox grbEdicionMateria;
         private System.Windows.Forms.Button btnEliminarMateria;
@@ -449,5 +445,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn uv;
+        private System.Windows.Forms.ComboBox cboOpcionBuscarMaterias;
+        private System.Windows.Forms.TextBox txtBuscarMaterias;
     }
 }

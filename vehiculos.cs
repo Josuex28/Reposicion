@@ -44,15 +44,14 @@ namespace Tareaaaaaaaaa222
             {
                 BindingSource bs = new BindingSource();
                 bs.DataSource = grdGestionCarro.DataSource;
-                bs.Filter = opcion == 0 ? "codigo=" + valor : "materia like '%" + valor + "%'";
+                bs.Filter = opcion == 0 ? "codigo=" + valor : "materia like '%" + valor + "%'"; 
                 grdGestionCarro.DataSource = bs;
-               
-                erpCarro.SetError(txtBuscarCarro, "");
+                erpCarro.SetError(txtBuscarCarros, "");
               
                 }
                 catch (Exception e)
                 {
-                erpCarro.SetError(txtBuscarCarro, "Por favor ingrese un parametro a buscar");
+                erpCarro.SetError(txtBuscarCarros, "Por favor ingrese un parametro a buscar");
                 }
             }
             private void mostrarDatosCarro()
@@ -171,7 +170,7 @@ namespace Tareaaaaaaaaa222
 
             grbNavegacionCarro.Enabled = estado;
             btnEliminarCarro.Enabled = estado;
-            txtBuscarCarro.ReadOnly = !estado;
+            txtBuscarCarros.ReadOnly = !estado;
             }
             private void limpiarCajas()
             {
@@ -222,21 +221,26 @@ namespace Tareaaaaaaaaa222
             private void vehiculos_Load(object sender, EventArgs e)
             {
                 actualizarDsCarro();
-                cboOpcionBuscarCarro.SelectedIndex = 1;
+                cboOpcionBuscarCarros.SelectedIndex = 1;
 
             }
 
-        private void txtBuscarCarro_KeyUp(object sender, KeyEventArgs e)
+        
+
+        private void cboOpcionBuscarCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            filtrarCarro(txtBuscarCarro.Text, cboOpcionBuscarCarro.SelectedIndex);
+
+        }
+
+        private void txtBuscarCarros_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrarCarro(txtBuscarCarros.Text, cboOpcionBuscarCarros.SelectedIndex);
             if (e.KeyCode == Keys.Enter)
             {
                 seleccionarCarro();
                 e.SuppressKeyPress = true;
             }
         }
-
-        
     }
 
 

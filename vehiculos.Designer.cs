@@ -38,9 +38,7 @@
             this.num_chasis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new Tareaaaaaaaaa222.Database1DataSet();
-            this.txtBuscarCarro = new System.Windows.Forms.TextBox();
             this.lblBuscarCarro = new System.Windows.Forms.Label();
-            this.cboOpcionBuscarCarro = new System.Windows.Forms.ComboBox();
             this.grbEdicionCarro = new System.Windows.Forms.GroupBox();
             this.btnEliminarCarro = new System.Windows.Forms.Button();
             this.btnModificarCarro = new System.Windows.Forms.Button();
@@ -64,6 +62,8 @@
             this.lblDireccionCarro = new System.Windows.Forms.Label();
             this.vehiculosTableAdapter = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.vehiculosTableAdapter();
             this.erpCarro = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cboOpcionBuscarCarros = new System.Windows.Forms.ComboBox();
+            this.txtBuscarCarros = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdGestionCarro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
@@ -139,16 +139,6 @@
             this.database1DataSet.DataSetName = "Database1DataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtBuscarCarro
-            // 
-            this.txtBuscarCarro.Location = new System.Drawing.Point(501, 61);
-            this.txtBuscarCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtBuscarCarro.Name = "txtBuscarCarro";
-            this.txtBuscarCarro.ReadOnly = true;
-            this.txtBuscarCarro.Size = new System.Drawing.Size(173, 20);
-            this.txtBuscarCarro.TabIndex = 50;
-            this.txtBuscarCarro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarCarro_KeyUp);
-            // 
             // lblBuscarCarro
             // 
             this.lblBuscarCarro.AutoSize = true;
@@ -159,22 +149,6 @@
             this.lblBuscarCarro.TabIndex = 48;
             this.lblBuscarCarro.Text = "Buscar:";
             // 
-            // cboOpcionBuscarCarro
-            // 
-            this.cboOpcionBuscarCarro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboOpcionBuscarCarro.FormattingEnabled = true;
-            this.cboOpcionBuscarCarro.Items.AddRange(new object[] {
-            "Marca",
-            "Modelo",
-            "Año",
-            "Numero Motor",
-            "Numero Chasis  "});
-            this.cboOpcionBuscarCarro.Location = new System.Drawing.Point(361, 60);
-            this.cboOpcionBuscarCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cboOpcionBuscarCarro.Name = "cboOpcionBuscarCarro";
-            this.cboOpcionBuscarCarro.Size = new System.Drawing.Size(136, 21);
-            this.cboOpcionBuscarCarro.TabIndex = 47;
-            // 
             // grbEdicionCarro
             // 
             this.grbEdicionCarro.Controls.Add(this.btnEliminarCarro);
@@ -184,7 +158,7 @@
             this.grbEdicionCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.grbEdicionCarro.Name = "grbEdicionCarro";
             this.grbEdicionCarro.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.grbEdicionCarro.Size = new System.Drawing.Size(267, 91);
+            this.grbEdicionCarro.Size = new System.Drawing.Size(251, 91);
             this.grbEdicionCarro.TabIndex = 46;
             this.grbEdicionCarro.TabStop = false;
             this.grbEdicionCarro.Text = "Edicion";
@@ -193,7 +167,7 @@
             // 
             this.btnEliminarCarro.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarCarro.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarCarro.Location = new System.Drawing.Point(174, 39);
+            this.btnEliminarCarro.Location = new System.Drawing.Point(163, 39);
             this.btnEliminarCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminarCarro.Name = "btnEliminarCarro";
             this.btnEliminarCarro.Size = new System.Drawing.Size(72, 31);
@@ -205,7 +179,7 @@
             // btnModificarCarro
             // 
             this.btnModificarCarro.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCarro.Location = new System.Drawing.Point(90, 39);
+            this.btnModificarCarro.Location = new System.Drawing.Point(79, 39);
             this.btnModificarCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnModificarCarro.Name = "btnModificarCarro";
             this.btnModificarCarro.Size = new System.Drawing.Size(80, 31);
@@ -220,7 +194,7 @@
             this.btnNuevoCarro.Location = new System.Drawing.Point(5, 39);
             this.btnNuevoCarro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnNuevoCarro.Name = "btnNuevoCarro";
-            this.btnNuevoCarro.Size = new System.Drawing.Size(68, 31);
+            this.btnNuevoCarro.Size = new System.Drawing.Size(61, 31);
             this.btnNuevoCarro.TabIndex = 7;
             this.btnNuevoCarro.Text = "Nuevo";
             this.btnNuevoCarro.UseVisualStyleBackColor = true;
@@ -424,15 +398,36 @@
             // 
             this.erpCarro.ContainerControl = this;
             // 
+            // cboOpcionBuscarCarros
+            // 
+            this.cboOpcionBuscarCarros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboOpcionBuscarCarros.FormattingEnabled = true;
+            this.cboOpcionBuscarCarros.Items.AddRange(new object[] {
+            "Codigo",
+            "Materia"});
+            this.cboOpcionBuscarCarros.Location = new System.Drawing.Point(359, 60);
+            this.cboOpcionBuscarCarros.Name = "cboOpcionBuscarCarros";
+            this.cboOpcionBuscarCarros.Size = new System.Drawing.Size(121, 21);
+            this.cboOpcionBuscarCarros.TabIndex = 51;
+            this.cboOpcionBuscarCarros.SelectedIndexChanged += new System.EventHandler(this.cboOpcionBuscarCarros_SelectedIndexChanged);
+            // 
+            // txtBuscarCarros
+            // 
+            this.txtBuscarCarros.Location = new System.Drawing.Point(486, 60);
+            this.txtBuscarCarros.Name = "txtBuscarCarros";
+            this.txtBuscarCarros.Size = new System.Drawing.Size(205, 20);
+            this.txtBuscarCarros.TabIndex = 50;
+            this.txtBuscarCarros.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarCarros_KeyUp);
+            // 
             // vehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 406);
+            this.Controls.Add(this.cboOpcionBuscarCarros);
+            this.Controls.Add(this.txtBuscarCarros);
             this.Controls.Add(this.grdGestionCarro);
-            this.Controls.Add(this.txtBuscarCarro);
             this.Controls.Add(this.lblBuscarCarro);
-            this.Controls.Add(this.cboOpcionBuscarCarro);
             this.Controls.Add(this.grbEdicionCarro);
             this.Controls.Add(this.grbNavegacionCarro);
             this.Controls.Add(this.grbDatosGestionCarro);
@@ -456,9 +451,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grdGestionCarro;
-        private System.Windows.Forms.TextBox txtBuscarCarro;
         private System.Windows.Forms.Label lblBuscarCarro;
-        private System.Windows.Forms.ComboBox cboOpcionBuscarCarro;
         private System.Windows.Forms.GroupBox grbEdicionCarro;
         private System.Windows.Forms.Button btnEliminarCarro;
         private System.Windows.Forms.Button btnModificarCarro;
@@ -491,5 +484,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn year;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_motor;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_chasis;
+        private System.Windows.Forms.ComboBox cboOpcionBuscarCarros;
+        private System.Windows.Forms.TextBox txtBuscarCarros;
     }
 }

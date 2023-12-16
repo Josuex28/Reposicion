@@ -223,14 +223,26 @@
 
         }
 
-        private void txtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)
+       
+
+        private void cboOpcionBuscarMaterias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)
         {
             filtrarMaterias(txtBuscarMaterias.Text, cboOpcionBuscarMaterias.SelectedIndex);
             if (e.KeyCode == Keys.Enter)
             {
                 seleccionarMateria();
-                e.SuppressKeyPress = true;  
+                e.SuppressKeyPress = true;
             }
+        }
+
+        private void txtBuscarMaterias_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
