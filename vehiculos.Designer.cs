@@ -227,6 +227,7 @@
             this.btnNuevoCarro.TabIndex = 7;
             this.btnNuevoCarro.Text = "Nuevo";
             this.btnNuevoCarro.UseVisualStyleBackColor = true;
+            this.btnNuevoCarro.Click += new System.EventHandler(this.btnNuevoCarro_Click);
             // 
             // grbNavegacionCarro
             // 

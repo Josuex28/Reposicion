@@ -111,8 +111,8 @@ namespace Tareaaaaaaaaa222
             mostrarDatosCarro();
             }
 
-            private void btnNuevoMateria_Click_1(object sender, EventArgs e)
-            {
+        private void btnNuevoCarro_Click(object sender, EventArgs e)
+        {
                 if (btnNuevoCarro.Text == "Nuevo")
                 {
                 btnNuevoCarro.Text = "Guardar";
@@ -241,7 +241,7 @@ namespace Tareaaaaaaaaa222
                 }
             }
 
-        
+       
     }
 
 
