@@ -214,15 +214,10 @@ namespace Tareaaaaaaaaa222
                         actualizarDsCarro();
                     }
                 }
+        
             }
 
-            private void materiasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-            {
-                this.Validate();
-                this.vehiculosBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.database1DataSet);
 
-            }
 
             private void vehiculo_Load(object sender, EventArgs e)
             {
@@ -231,7 +226,7 @@ namespace Tareaaaaaaaaa222
 
             }
 
-            private void txtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)
+        private void txtBuscarCarro_KeyUp(object sender, KeyEventArgs e)
             {
                 filtrarCarro(txtBuscarCarro.Text, cboOpcionBuscarCarro.SelectedIndex);
                 if (e.KeyCode == Keys.Enter)
@@ -241,11 +236,6 @@ namespace Tareaaaaaaaaa222
                 }
             }
 
-        private void txtBuscarCarro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
 
-    }
