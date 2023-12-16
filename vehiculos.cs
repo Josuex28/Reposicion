@@ -142,8 +142,8 @@ namespace Tareaaaaaaaaa222
                 }
             }
 
-            private void btnModificarMateria_Click_1(object sender, EventArgs e)
-            {
+        private void btnModificarCarro_Click(object sender, EventArgs e)
+        {
                 if (btnModificarCarro.Text == "Modificar")
                 {
                 btnNuevoCarro.Text = "Guardar";
@@ -194,8 +194,8 @@ namespace Tareaaaaaaaaa222
                 seleccionarCarro();
             }
 
-            private void btnEliminarMateria_Click_1(object sender, EventArgs e)
-            {
+        private void btnEliminarCarro_Click(object sender, EventArgs e)
+        {
                 if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreCarro.Text, "Eliminado Carro",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -241,8 +241,6 @@ namespace Tareaaaaaaaaa222
                 }
             }
 
-       
-        
     }
 
 

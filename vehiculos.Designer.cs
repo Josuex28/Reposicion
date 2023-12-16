@@ -205,6 +205,7 @@
             this.btnEliminarCarro.TabIndex = 9;
             this.btnEliminarCarro.Text = "Eliminar";
             this.btnEliminarCarro.UseVisualStyleBackColor = true;
+            this.btnEliminarCarro.Click += new System.EventHandler(this.btnEliminarCarro_Click);
             // 
             // btnModificarCarro
             // 
@@ -216,6 +217,7 @@
             this.btnModificarCarro.TabIndex = 8;
             this.btnModificarCarro.Text = "Modificar";
             this.btnModificarCarro.UseVisualStyleBackColor = true;
+            this.btnModificarCarro.Click += new System.EventHandler(this.btnModificarCarro_Click);
             // 
             // btnNuevoCarro
             // 
