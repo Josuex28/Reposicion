@@ -86,8 +86,8 @@ namespace Tareaaaaaaaaa222
                 }
             }
 
-            private void btnUltimoMateria_Click_1(object sender, EventArgs e)
-            {
+        private void btnUltimoCarro_Click(object sender, EventArgs e)
+        {
                 posicion = miTabla.Rows.Count - 1;
             mostrarDatosCarro();
             }
@@ -242,6 +242,7 @@ namespace Tareaaaaaaaaa222
             }
 
        
+        
     }
 
 

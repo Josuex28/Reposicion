@@ -277,6 +277,7 @@
             this.btnUltimoCarro.TabIndex = 3;
             this.btnUltimoCarro.Text = ">|";
             this.btnUltimoCarro.UseVisualStyleBackColor = true;
+            this.btnUltimoCarro.Click += new System.EventHandler(this.btnUltimoCarro_Click);
             // 
             // btnAnteriorCarro
             // 
