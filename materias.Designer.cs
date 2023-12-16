@@ -56,7 +56,6 @@
             this.materiasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new Tareaaaaaaaaa222.Database1DataSet();
             this.materiasTableAdapter = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.materiasTableAdapter();
-            this.tableAdapterManager = new Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager();
             this.cboOpcionBuscarMaterias = new System.Windows.Forms.ComboBox();
             this.txtBuscarMaterias = new System.Windows.Forms.TextBox();
             this.grbEdicionMateria.SuspendLayout();
@@ -354,13 +353,6 @@
             // 
             this.materiasTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.materiasTableAdapter = this.materiasTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Tareaaaaaaaaa222.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.vehiculosTableAdapter = null;
-            // 
             // cboOpcionBuscarMaterias
             // 
             this.cboOpcionBuscarMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -439,7 +431,6 @@
         private System.Windows.Forms.BindingSource materiasBindingSource;
         private Database1DataSet database1DataSet;
         private Database1DataSetTableAdapters.materiasTableAdapter materiasTableAdapter;
-        private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView grdDatosMaterias;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMateriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;

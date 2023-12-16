@@ -44,7 +44,15 @@ namespace Tareaaaaaaaaa222
             {
                 BindingSource bs = new BindingSource();
                 bs.DataSource = grdGestionCarro.DataSource;
-                bs.Filter = opcion == 0 ? "codigo=" + valor : "materia like '%" + valor + "%'"; 
+                if (opcion == 0)
+                {
+                    bs.Filter = "year=" + valor;
+                }
+                else
+                {
+                    bs.Filter = "marca like '%" + valor + "%' OR num_motor like '%" + valor + "%' OR modelo like '%" + valor + "%' OR num_chasis like '%" + valor + "%'";
+                }
+
                 grdGestionCarro.DataSource = bs;
                 erpCarro.SetError(txtBuscarCarros, "");
               
@@ -195,7 +203,7 @@ namespace Tareaaaaaaaaa222
 
         private void btnEliminarCarro_Click(object sender, EventArgs e)
         {
-                if (MessageBox.Show("Esta seguro de eliminar a " + txtCodigoCarro.Text, "Eliminado Carro",
+                if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreCarro.Text, "Eliminado Carro",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     String[] vehiculos = new string[] {

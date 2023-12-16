@@ -403,8 +403,11 @@
             this.cboOpcionBuscarCarros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboOpcionBuscarCarros.FormattingEnabled = true;
             this.cboOpcionBuscarCarros.Items.AddRange(new object[] {
-            "Codigo",
-            "Materia"});
+            "Año",
+            "Nun_Chasis",
+            "Nun_Motor",
+            "Modelo",
+            "Marca"});
             this.cboOpcionBuscarCarros.Location = new System.Drawing.Point(359, 60);
             this.cboOpcionBuscarCarros.Name = "cboOpcionBuscarCarros";
             this.cboOpcionBuscarCarros.Size = new System.Drawing.Size(121, 21);
@@ -475,7 +478,6 @@
         private System.Windows.Forms.Label lblDireccionCarro;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource vehiculosBindingSource;
-        private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private Database1DataSetTableAdapters.vehiculosTableAdapter vehiculosTableAdapter;
         private System.Windows.Forms.ErrorProvider erpCarro;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVehiculo;
